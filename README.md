@@ -54,24 +54,24 @@ To use this module, the following inputs are required when creating an instance 
 
 ## Example
 
-from sd_4023 import SD_4023
-sdObject1 = SD_4023('/dev/ttyUSB0')
-\#sdObject2 = SD_4023('/dev/ttyUSB0',1)
+from sd_4023 import SD_4023  
+sdObject1 = SD_4023('/dev/ttyUSB0')  
+\#sdObject2 = SD_4023('/dev/ttyUSB0',1)  
 
-\#Start serial connection to device
-sdObject1.open()
+\#Start serial connection to device  
+sdObject1.open()  
 
-\#Read entire 16 digit data stream, returned as a list
-data_stream = sdObject1.read()
-print data_stream
+\#Read entire 16 digit data stream, returned as a list  
+data_stream = sdObject1.read()  
+print data_stream  
 
-\#Read only the decibel level, returned as a float
-decibels = sdObject1.read_decibel()
-print decibels
+\#Read only the decibel level, returned as a float  
+decibels = sdObject1.read_decibel()  
+print decibels  
 
-\#Get the status of the serial connection
-sta = sdObject1.get_status()
-print sta
+\#Get the status of the serial connection  
+sta = sdObject1.get_status()  
+print sta  
 
-\#Close serial connection to device
-sdObject1.close()
+\#Close serial connection to device  
+sdObject1.close()  
