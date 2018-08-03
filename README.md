@@ -54,6 +54,7 @@ To use this module, the following inputs are required when creating an instance 
 
 ## Example
 
+```
 from sd_4023 import SD_4023  
 sdObject1 = SD_4023('/dev/ttyUSB0')  
 \#sdObject2 = SD_4023('/dev/ttyUSB0',1)  
@@ -75,3 +76,4 @@ print sta
 
 \#Close serial connection to device  
 sdObject1.close()  
+```
