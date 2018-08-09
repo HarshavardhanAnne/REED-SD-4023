@@ -54,12 +54,15 @@ class SD_4023(object):
         if self._serialObj.is_open == True:
             if self._status_flag == 0:
                 try:
+                    start = False
                     #for i in range(0,16):
                     #    self._data_buffer[i] = ''
                     while (self._buffer_idx >= 0):
                         byte_in = self._serialObj.read()
-                        self._data_buffer[self._buffer_idx] = byte_in
-                        self._buffer_idx = self._buffer_idx - 1
+                        if (byte_in == '\x02'): start = True
+                        if start == True:
+                            self._data_buffer[self._buffer_idx] = byte_in
+                            self._buffer_idx = self._buffer_idx - 1
                     self._buffer_idx = 15
                     return self._data_buffer
                 except serial.serialutil.SerialException:
