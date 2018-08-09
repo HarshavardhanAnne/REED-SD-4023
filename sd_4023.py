@@ -60,14 +60,7 @@ class SD_4023(object):
                         self._data_buffer[self._buffer_idx] = byte_in
                         self._buffer_idx = self._buffer_idx - 1
                     self._buffer_idx = 15
-                    #logsd.info(self._data_buffer)
-                    if self._data_buffer[0] == '':
-                        raise ValueError("(SD_4023): TimeoutError! Could not read any data")
                     return self._data_buffer
-                except ValueError as err:
-                    print (err)
-                    self._status_flag = 1
-                    return None
                 except serial.serialutil.SerialException:
                     if (self._print_option): print "(SD_4023): SERIAL EXCEPTION! Could not read data. Close and reopen the serial connection."
                     self._status_flag = 1
