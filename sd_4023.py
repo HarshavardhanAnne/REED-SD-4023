@@ -35,12 +35,12 @@ class SD_4023(object):
         try:
             self._serialObj.open()
             self._status_flag = 0
-
+            if (self._print_option): print ("(SD_4023): Serial connection established")
         except serial.serialutil.SerialException:
             #logsd.ERROR('Could not open serial port %s' % self._port)
             if (self._print_option): print ("(SD_4023): Could not open serial port %s" % self._port)
             self._status_flag = 1
-        if (self._print_option): print ("(SD_4023): Serial connection established")
+
 
 
     def close(self):
@@ -54,8 +54,8 @@ class SD_4023(object):
         if self._serialObj.is_open == True:
             if self._status_flag == 0:
                 try:
-                    for i in range(0,16):
-                        self._data_buffer[i] = ''
+                    #for i in range(0,16):
+                    #    self._data_buffer[i] = ''
                     while (self._buffer_idx >= 0):
                         byte_in = self._serialObj.read()
                         self._data_buffer[self._buffer_idx] = byte_in
@@ -77,9 +77,9 @@ class SD_4023(object):
             if self._status_flag == 0:
                 try:
                     self.read()
-                    for i in range(0,16):
-                        if self._data_buffer[i] == '':
-                            return None
+                    #for i in range(0,16):
+                    #    if self._data_buffer[i] == '':
+                    #        return None
                     temp_str = self._data_buffer[4] + self._data_buffer[3] + self._data_buffer[2] + '.' + self._data_buffer[1]
                     return float(temp_str)
                 except serial.serialutil.SerialException:
