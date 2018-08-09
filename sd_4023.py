@@ -34,13 +34,14 @@ class SD_4023(object):
 
         try:
             self._serialObj.open()
-            if (self._print_option): print ("(SD_4023): Serial connection established")
             self._status_flag = 0
 
         except serial.serialutil.SerialException:
             #logsd.ERROR('Could not open serial port %s' % self._port)
             if (self._print_option): print ("(SD_4023): Could not open serial port %s" % self._port)
             self._status_flag = 1
+        if (self._print_option): print ("(SD_4023): Serial connection established")
+
 
     def close(self):
         try:
