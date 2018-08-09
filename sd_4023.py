@@ -30,7 +30,7 @@ class SD_4023(object):
         self._serialObj.parity = serial.PARITY_NONE
         self._serialObj.stopbits = serial.STOPBITS_ONE
         self._serialObj.timeout = 0.3
-        self._serialObj.write_timeout = 0.3
+        #self._serialObj.write_timeout = 0.3
 
         try:
             self._serialObj.open()
