@@ -80,7 +80,7 @@ class SD_4023(object):
                     #for i in range(0,16):
                     #    if self._data_buffer[i] == '':
                     #        return None
-                    temp_str = self._data_buffer[4] + self._data_buffer[3] + self._data_buffer[2] + '.' + self._data_buffer[1]
+                    temp_str = self._data_buffer[3] + self._data_buffer[2] + self._data_buffer[1] + '.' + self._data_buffer[0]
                     return float(temp_str)
                 except serial.serialutil.SerialException:
                     if (self._print_option): print "(SD_4023): Could not read data. Close and reopen the serial connection."
