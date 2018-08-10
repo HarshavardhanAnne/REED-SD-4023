@@ -84,7 +84,7 @@ class SD_4023(object):
                     #for i in range(0,16):
                     #    if self._data_buffer[i] == '':
                     #        return None
-                    if (self._data_buffer[0:5] is not '')
+                    if (self._data_buffer[0:5] is not ''):
                         temp_str = self._data_buffer[4] + self._data_buffer[3] + self._data_buffer[2] + '.' + self._data_buffer[1]
                     else:
                         temp_str = None
