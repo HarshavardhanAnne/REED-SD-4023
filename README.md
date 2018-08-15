@@ -28,10 +28,10 @@ On page 14 of the user manual, the PC Serial Interface shows an invalid wiring p
 
 ### Software
 
-Clone this repository using SSH(or download the .zip file)
+Clone this repository using HTTPS(or download the .zip file)
 
 ```
-git clone git@github.com:HarshavardhanAnne/REED-SD-4023.git
+git clone https://github.com/HarshavardhanAnne/REED-SD-4023-serial.git
 ```
 
 Install the python2.7 serial library
